@@ -5,7 +5,179 @@
 @source '../**/*.blade.php';
 @source '../**/*.js';
 
+
 @theme {
-    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-        'Segoe UI Symbol', 'Noto Color Emoji';
+    --font-sans: "Montserrat", ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+    'Segoe UI Symbol', 'Noto Color Emoji';
+    --color-rwk-blue: #e8b710 ;
+    --color-rwk-yellow: #e8b710 ;
+    --color-primary-50: #00a65a;
+    --color-primary-100: #00a65a;
+    --color-primary-200: #00a65a;
+    --color-primary-300: #00a65a;
+    --color-primary-500: #00a65a;
+    --color-primary-400: #00a65a;
+    --color-primary-600: #00a65a;
+    --color-primary-700: #00a65a;
+    --color-primary-800: #00a65a;
+    --color-primary-900: #00a65a;
+    --color-primary-950: #00a65a;
+
+
+    --color-secondary-50: #292974;
+    --color-secondary-100: #292974;
+    --color-secondary-200: #292974;
+    --color-secondary-300: #292974;
+    --color-secondary-400: #292974;
+    --color-secondary-500: #292974;
+    --color-secondary-600: #292974;
+    --color-secondary-700: #292974;
+    --color-secondary-800: #292974;
+    --color-secondary-900: #292974;
+    --color-secondary-950: #292974;
+
+    --color-danger-50: #dd4b39;
+    --color-danger-100: #dd4b39;
+    --color-danger-200: #dd4b39;
+    --color-danger-300: #dd4b39;
+    --color-danger-400: #dd4b39;
+    --color-danger-500: #dd4b39;
+    --color-danger-600: #dd4b39;
+    --color-danger-700: #dd4b39;
+    --color-danger-800: #dd4b39;
+    --color-danger-900: #dd4b39;
+    --color-danger-950: #dd4b39;
+
+    --color-surface-container-low: #f8fafc;
+    --color-on-surface-variant: #475569;
+    --color-outline: #e2e8f0;
+
+    /* Custom Animations for v4 */
+    @keyframes slide-up {
+        from { opacity: 0; transform: translateY(30px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+}
+@layer components {
+    body{
+
+        @apply  bg-gray-200 dark:bg-gray-900 ;
+    }
+
+    .fi-modal{
+        @apply shadow-md bg-gray-200 dark:bg-gray-800 ;
+    }
+
+    .fi{
+        font-size: 10pt;
+    }
+
+    span.fi-sidebar-item-label span.fi-sidebar-group-label {
+        font-size: 9pt ;
+    }
+
+    .fi-sidebar-header  {
+        @apply bg-primary-400 dark:bg-primary-400 text-white  dark:text-white ;
+    }
+    .fi-logo  {
+        @apply text-white  dark:text-white ;
+    }
+
+    .fi-sidebar-item-label   {
+        @apply text-gray-100 ;
+    }
+
+    .fi-sidebar  {
+        @apply bg-[#222d32] text-white  dark:text-white ;
+    }
+
+    .fi-topbar>nav {
+        @apply bg-primary-400 dark:bg-gray-900 text-white  dark:text-white ;
+    }
+    .fi-topbar>nav>.fi-icon-btn-icon{
+        @apply text-white
+    }
+    /*.fi-topbar>nav>div>div.fi-global-search>div>div {*/
+    /*    @apply bg-gray-50 ;*/
+    /*}*/
+
+    .fi-sidebar-item-label   {
+        @apply text-gray-100 ;
+    }
+    .fi-topbar-item-label  {
+        @apply text-gray-100 hover:text-white active:text-white ;
+    }
+    .fi-topbar-item-button:hover{
+        @apply bg-secondary-400 dark:bg-gray-900 text-white  dark:text-white ;
+    }
+    .fi-active>.fi-topbar-item-button{
+        @apply bg-secondary-400 dark:bg-gray-900 text-white px-0.5 py-0.5  dark:text-white ;
+    }
+    .fi-sidebar-item-label:active  {
+        @apply text-gray-800 ;
+    }
+    .fi-sidebar-group-label {
+        @apply text-gray-100  text-lg ;
+    }
+    .fi-active>.fi-sidebar-item-button {
+        @apply  text-white bg-primary-400 border-primary-600  px-1.5 py-1.5 ;
+    }
+    .fi-sidebar-item-button:hover{
+        @apply bg-secondary-500 text-gray-50
+    }
+
+    .primary-widget{
+        @apply bg-primary-400 dark:bg-gray-800 ;
+    }
+    .primary-widget>div>div>span.fi-wi-stats-overview-stat-label{
+        @apply text-white ;
+    }
+    .primary-widget>div>div.fi-wi-stats-overview-stat-value{
+        @apply text-white ;
+    }
+
+
+    .secondary-widget{
+        @apply bg-secondary-400 dark:bg-gray-800 ;
+    }
+    .secondary-widget>div>div>span.fi-wi-stats-overview-stat-label{
+        @apply text-white ;
+    }
+    .secondary-widget>div>div.fi-wi-stats-overview-stat-value{
+        @apply text-white ;
+    }
+
+
+    .danger-widget{
+        @apply bg-danger-400 ;
+    }
+
+    .danger-widget{
+        @apply bg-danger-600 ;
+    }
+    .danger-widget>div>div>span.fi-wi-stats-overview-stat-label{
+        @apply text-white ;
+    }
+    .danger-widget>div>div.fi-wi-stats-overview-stat-value{
+        @apply text-white ;
+    }
+    .secondary-widget>div>div>span.fi-wi-stats-overview-stat-description{
+        @apply text-white ;
+    }
+    .primary-widget>div>div>span.fi-wi-stats-overview-stat-description{
+        @apply text-white ;
+    }
+    .danger-widget>div>div>span.fi-wi-stats-overview-stat-description{
+        @apply text-white ;
+    }
+
+    header.fi-sidebar-header>button.fi-icon-btn>svg.fi-icon-btn-icon{
+        @apply text-white
+    }
+    nav>div>div>div>button.fi-icon-btn>svg.fi-icon-btn-icon{
+        @apply text-white
+    }
+    nav>button.fi-icon-btn>svg.fi-icon-btn-icon{
+        @apply text-white
+    }
 }

@@ -2,6 +2,9 @@
 
 namespace App\Providers;
 
+use App\Services\Auth\ERPService;
+use App\Services\Auth\ERPUserProvider;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -19,6 +22,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        Auth::provider('erp-api', function ($app, array $config) {
+            return new ERPUserProvider($app->make(ERPService::class));
+        });
     }
 }
