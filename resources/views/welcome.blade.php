@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fanaka Real Estate | Agency Portal - Become a Partner</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+  @vite(['resources/css/app.css','resources/js/app.js'])
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
         :root {
@@ -104,7 +104,7 @@
                         </a>
 
                         <p class="text-center text-sm text-gray-400">
-                            By clicking, you will be redirected to the secure <strong>Filament</strong> login environment.
+                            By clicking, you will be redirected to the secure login environment.
                         </p>
                     </div>
 
